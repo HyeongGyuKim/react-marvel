@@ -1,5 +1,5 @@
-import './App.css'
-import { Routes } from 'react-router-dom'
+import { Routes } from 'react-router-dom';
+import './styles/base/common.scss';
 
 function App() {
   return (
