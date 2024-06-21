@@ -1,30 +1,43 @@
 import {useState} from "react";
+import {Link} from "react-router-dom";
 
 function Header() {
     const [hamburgerActive, setHamburgerActive] = useState(false);
+    const [searchActive, setSearchActive] = useState(false);
 
     const toggleHamburger = () => {
         setHamburgerActive(!hamburgerActive);
+        setSearchActive(false);
     };
+
+    const handelOnSearch = () => {
+        setSearchActive(true)
+    }
 
     return(
         <header className={hamburgerActive ? "header active" : "header"}>
             <div className="h_cont">
-                <div className="h_right">
+                <div className="h_left">
                     <div className="h_id">
-                        <img src="/dashboard/marvel_logo.png" alt="로고" />
+                        <Link to={"/pages/DashBoard"}><img src="/logo/marvel_logo.png" alt="로고" /></Link>
                     </div>
                 </div>
-                <ul className="h_icon" onClick={toggleHamburger}>
-                    <li><img src="img/main_page/header/icon/login.svg" alt="" /></li>
-                    <li>
-                        <div id="hamburger" className={hamburgerActive ? "hamburger nav_btn active" : "hamburger nav_btn"}>
-                            <span className="line"></span>
-                            <span className="line"></span>
-                            <span className="line"></span>
-                        </div>
-                    </li>
-                </ul>
+                <div className="h_right">
+                    <ul className="h_menu">
+                        <li>
+                            <p>로그인</p>
+                        </li>
+                        <li onClick={handelOnSearch}><img src="/icon/search.svg" alt="검색"/></li>
+                        <li>
+                            <div id="hamburger" className={hamburgerActive ? "hamburger nav_btn active" : "hamburger nav_btn"} onClick={toggleHamburger}>
+                                <span className="line"></span>
+                                <span className="line"></span>
+                                <span className="line"></span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div className={searchActive ? "search active" : "search"}><input type="text" placeholder="검색어를 입력해주세요"/></div>
             </div>
             <div className="gnb_box">
                 <nav className="gnb">

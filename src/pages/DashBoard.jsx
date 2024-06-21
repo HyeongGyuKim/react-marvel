@@ -53,11 +53,6 @@ export default function App() {
                         className={`${activeIndex === 3 ? 'active' : ''}`}
                         onClick={() => setActiveIndex(3)}
                     >4</button>
-                    <button
-                        type="button"
-                        className={`${activeIndex === 4 ? 'active' : ''}`}
-                        onClick={() => setActiveIndex(4)}
-                    >5</button>
                 </div>
             </div>
         </>
