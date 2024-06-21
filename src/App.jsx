@@ -1,12 +1,15 @@
-import { Routes } from 'react-router-dom';
+import {Route, Routes} from 'react-router-dom';
+import './styles/base/font.scss';
 import './styles/base/common.scss';
+import './styles/pages/dashboard.scss';
+import './styles/components/header.scss';
+import DashBoard from "./pages/DashBoard.jsx";
 
 function App() {
   return (
     <>
-      <p>12312312ㅁㄴㅇ422</p>
       <Routes>
-
+          <Route path="*" element={<DashBoard/>}/>
       </Routes>
     </>
   )

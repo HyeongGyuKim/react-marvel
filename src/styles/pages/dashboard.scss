@@ -1,0 +1,24 @@
+@use "../base/variables";
+@use "../helpers/utilities";
+
+.dashboard__layout {
+    position: relative;
+    .dashboard__controller {
+        @include utilities.setAbsolute(2%, 50%, -2%, -50%);
+        @include utilities.setFlex(flex, center, center, column);
+        button {
+            font-size: variables.$DEF_FONT_SIZE - 13;
+            background-color: #535bf2;
+            border-radius: variables.$DEF_BORDER_RADIUS + 5;
+            @include utilities.setWH(15px, 15px);
+            @include utilities.setMargin(0, 0, 10px, 0);
+        }
+        button.active {
+            background-color: brown;
+        }
+    }
+    .react-fullpage__wrapper {
+        max-width: calc(1680px - 40px);
+        margin: 0 auto;
+    }
+}
