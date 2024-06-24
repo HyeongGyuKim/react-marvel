@@ -7,3 +7,9 @@ $DEF_WIDTH: 100px;
 $DEF_HEIGHT: 100px;
 $DEF_LINE_HEIGHT: 15px;
 $DEF_BORDER_RADIUS: 5px;
+
+%defalut_calc_section {
+    max-width: calc(1680px - 40px);
+    min-width: calc(1064px - 40px);
+    margin: 0 auto;
+}

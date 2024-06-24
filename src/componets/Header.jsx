@@ -1,9 +1,10 @@
-import {useState} from "react";
-import {Link} from "react-router-dom";
+import { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 
 function Header() {
     const [hamburgerActive, setHamburgerActive] = useState(false);
     const [searchActive, setSearchActive] = useState(false);
+    const searchRef = useRef(null);
 
     const toggleHamburger = () => {
         setHamburgerActive(!hamburgerActive);
@@ -11,15 +12,35 @@ function Header() {
     };
 
     const handelOnSearch = () => {
-        setSearchActive(true)
-    }
+        setSearchActive(true);
+    };
 
-    return(
+    const handleClickOutside = (event) => {
+        if (searchRef.current && !searchRef.current.contains(event.target)) {
+            setSearchActive(false);
+        }
+    };
+
+    useEffect(() => {
+        if (searchActive) {
+            document.addEventListener("mousedown", handleClickOutside);
+        } else {
+            document.removeEventListener("mousedown", handleClickOutside);
+        }
+
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [searchActive]);
+
+    return (
         <header className={hamburgerActive ? "header active" : "header"}>
             <div className="h_cont">
                 <div className="h_left">
                     <div className="h_id">
-                        <Link to={"/pages/DashBoard"}><img src="/logo/marvel_logo.png" alt="로고" /></Link>
+                        <Link to={"/pages/DashBoard"}>
+                            <img src="/logo/marvel_logo.png" alt="로고" />
+                        </Link>
                     </div>
                 </div>
                 <div className="h_right">
@@ -27,9 +48,15 @@ function Header() {
                         <li>
                             <p>로그인</p>
                         </li>
-                        <li onClick={handelOnSearch}><img src="/icon/search.svg" alt="검색"/></li>
+                        <li onClick={handelOnSearch}>
+                            <img src="/icon/search.svg" alt="검색" />
+                        </li>
                         <li>
-                            <div id="hamburger" className={hamburgerActive ? "hamburger nav_btn active" : "hamburger nav_btn"} onClick={toggleHamburger}>
+                            <div
+                                id="hamburger"
+                                className={hamburgerActive ? "hamburger nav_btn active" : "hamburger nav_btn"}
+                                onClick={toggleHamburger}
+                            >
                                 <span className="line"></span>
                                 <span className="line"></span>
                                 <span className="line"></span>
@@ -37,7 +64,9 @@ function Header() {
                         </li>
                     </ul>
                 </div>
-                <div className={searchActive ? "search active" : "search"}><input type="text" placeholder="검색어를 입력해주세요"/></div>
+                <div className={searchActive ? "search active" : "search"} ref={searchRef}>
+                    <input type="text" placeholder="검색어를 입력해주세요" />
+                </div>
             </div>
             <div className="gnb_box">
                 <nav className="gnb">
@@ -94,7 +123,7 @@ function Header() {
                 </nav>
             </div>
         </header>
-    )
+    );
 }
 
 export default Header;
