@@ -11,13 +11,22 @@ export default function App() {
     return (
         <>
             <Header />
-            <div className="dashboard__layout">
+            <div className="dashboard_layout">
                 <FullpageContainer
                     activeIndex={activeIndex}
                     setActiveIndex={setActiveIndex}
                 >
                     <FullpageSection>
-                        <div>Section 1</div>
+                        <section id="section_1" className="section">
+                            <div className="section_1_video">
+                                <div className="video_wrap">
+                                    <video autoPlay muted loop data-keepplaying data-autoplay playsInline className="video">
+                                        <source src="/video/marvel.mp4" />
+                                        <source src="/video/marvel.mp4" />
+                                    </video>
+                                </div>
+                            </div>
+                        </section>
                     </FullpageSection>
                     <FullpageSection>
                         <div>Section 2</div>
@@ -32,7 +41,7 @@ export default function App() {
                         <footer>Footer</footer>
                     </FullpageSection>
                 </FullpageContainer>
-                <div className="dashboard__controller">
+                <div className="dashboard_controller">
                     <button
                         type="button"
                         className={`${activeIndex === 0 ? 'active' : ''}`}
