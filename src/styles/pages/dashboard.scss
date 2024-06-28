@@ -21,6 +21,143 @@
             }
         }
     }
+    #section_2 {
+        @include utilities.setMargin(70px, auto, 0, auto);
+        min-width: calc(1064px - 40px);
+        background: url("/public/dashboard/ipad.png") center no-repeat;
+        .section_2_title {
+            @include utilities.setFlex(flex, center, center, column);
+            height: 250px;
+            h2 {
+                font-size: variables.$DEF_FONT_SIZE + 35;
+                line-height: variables.$DEF_LINE_HEIGHT + 55;
+                color: variables.$DEF_COLOR;
+                font-weight: variables.$DEF_FONT_WEIGHT + 100;
+                @include utilities.setMargin(0, 0, 5px, 0);
+            }
+            p {
+                font-size: variables.$DEF_FONT_SIZE + 75;
+                font-weight: variables.$DEF_FONT_WEIGHT + 300;
+                background: linear-gradient(to right, #ff6a00, #ee0979);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+        .s2_sliderWrap {
+            @include utilities.setMargin(120px, 0, 0, 0);
+            .s2_box {
+                width: 42%;
+                @include utilities.setMargin(0, auto, 0, auto);
+                position: relative;
+                opacity: 1;
+                @include utilities.setFlex(flex, center, space-between, row);
+                .s2_slide {
+                    position: relative;
+                    @include utilities.setWH(350px, auto);
+                    border-radius: variables.$DEF_BORDER_RADIUS + 15;
+                    overflow: hidden;
+                    img {
+                        transition: 0.3s;
+                        width: 100%;
+                        height: auto !important;
+                    }
+                }
+                .s2_slide_txt {
+                    width: 50%;
+                    @include utilities.setFlex(flex, flex-start, center, column);
+                    p {
+                        color: #fff;
+                    }
+                    .s2_slide_tit {
+                        font-size: variables.$DEF_FONT_SIZE + 15;
+                    }
+                    .s2_slide_desc {
+                        font-size: variables.$DEF_FONT_SIZE;
+                        line-height: variables.$DEF_LINE_HEIGHT + 8;
+                        @include utilities.setMargin(10px, 0, 15px, 0);
+                    }
+                    .s2_slide_etc {
+                        @include utilities.setFlex(flex, flex-start, space-between, row);
+                        @include utilities.setMargin(0, 0, 10px, 0);
+                        width: 100%;
+                        div {
+                            width: 33%;
+                            span {
+                                display: block;
+                                color: #999;
+                                font-size: variables.$DEF_FONT_SIZE;
+                                @include utilities.setMargin(0, 0, 5px, 0);
+                            }
+                            p {
+                                font-size: variables.$DEF_FONT_SIZE - 2;
+                            }
+                        }
+                    }
+                    .s2_slide_video {
+                        border: 1px solid #fff;
+                        @include utilities.setPadding(5px, 20px, 5px, 20px);
+                        cursor: pointer;
+                    }
+                }
+                //.s2_slide_txt {
+                //    @include utilities.setAbsolute(50%, 50%, -50%, -50%);
+                //    visibility: hidden;
+                //    opacity: 0;
+                //    transition: 0.3s;
+                //    width: 100%;
+                //    p {
+                //        text-align: left;
+                //        font-size: variables.$DEF_FONT_SIZE - 2;
+                //        color: variables.$DEF_COLOR;
+                //        line-height: variables.$DEF_LINE_HEIGHT + 5;
+                //        font-weight: variables.$DEF_FONT_WEIGHT + 100;
+                //        word-break: break-all;
+                //        padding: 20px;
+                //    }
+                //}
+            }
+            //.s2_box {
+            //    &:hover {
+            //        opacity: 1;
+            //        img {
+            //            cursor: pointer;
+            //            filter: brightness(0.7);
+            //            transition: 0.3s;
+            //        }
+            //        .s2_slide+.s2_slide_txt {
+            //            visibility: visible;
+            //            opacity: 1;
+            //            cursor: pointer;
+            //        }
+            //    }
+            //}
+        }
+        .slick-next {
+            right: 28%;
+            top: 95%;
+            transform: translate(-28%, -95%);
+            z-index: 5;
+            background: url("/public/icon/sliderArrowRight.png") center no-repeat;
+            @include utilities.setWH(30px, 30px);
+            background-color: #838383;
+            border-radius: 50%;
+            background-size: 10px;
+        }
+        .slick-prev {
+            left: 69%;
+            top: 95%;
+            transform: translate(-69%, -95%);
+            z-index: 5;
+            background: url("/public/icon/sliderArrowLeft.png") center no-repeat;
+            @include utilities.setWH(30px, 30px);
+            background-color: #838383;
+            border-radius: 50%;
+            background-size: 10px;
+        }
+        .slick-prev::before, .slick-next::before {
+            content: "";
+        }
+    }
     .dashboard_controller {
         @include utilities.setAbsolute(2%, 50%, -2%, -50%);
         @include utilities.setFlex(flex, center, center, column);
@@ -31,6 +168,7 @@
             @include utilities.setWH(8px, 8px);
             @include utilities.setMargin(0, 0, 20px, 0);
             transition: all 0.5s;
+            z-index: 5;
         }
         button.active {
             background-color: #036db7;
