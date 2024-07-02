@@ -12,11 +12,11 @@ function DashBoardSection2() {
         dots: false, arrow:true, infinite: true, speed: 500, slidesToShow: 1, slidesToScroll: 1,
     };
 
-    return <div id="section_2" >
+    return <div id="section_2">
         <div className="s2_sliderWrap">
             <Slider {...settings}>
-                {responseData?.data?.map((info) => {
-                    return <>
+                {responseData?.data?.map((info, i) => {
+                    return <div key={i}>
                         <div className="s2_box">
                             <div className="s2_slide">
                                 <img src={info.img} alt={info.title}/>
@@ -43,11 +43,11 @@ function DashBoardSection2() {
                                 </div>
                             </div>
                         </div>
-                    </>
+                    </div>
                 })}
             </Slider>
         </div>
-    </div>;
+    </div>
 }
 
 export default DashBoardSection2;
