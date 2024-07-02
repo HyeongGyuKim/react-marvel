@@ -286,6 +286,246 @@
             }
         }
     }
+
+    #section_4 {
+        @extend %defalut_calc_section;
+        .s4_box {
+            .s4_top_top {
+                @include utilities.setFlex(flex, center, space-between, row);
+                @include utilities.setMargin(70px, 0, 20px, 0);
+                h4 {
+                    color: variables.$DEF_COLOR;
+                    font-size: variables.$DEF_FONT_SIZE + 25;
+                }
+                a {
+                    color: variables.$DEF_COLOR;
+                    font-size: variables.$DEF_FONT_SIZE - 1;
+                    i {
+                        @include utilities.setMargin(0, 0, 0, 5px);
+                    }
+                }
+            }
+            .s4_top_bottom {
+                .slick-slide {
+                    @include utilities.setPadding(20px, 0, 0, 0);
+                    cursor: pointer;
+                }
+                .slick-slide > div {
+                    @include utilities.setMargin(0, 10px, 0, 10px);
+                }
+                .slick-active {
+                    transition: 0.5s;
+                }
+            }
+            .s4_top_bottom {
+                .slick-active:hover {
+                    padding: 0 !important;
+                    transition: all 0.7s ease;
+                    p {
+                        text-decoration: underline;
+                    }
+                }
+                .slick-next, .slick-prev {
+                    top: 43%;
+                }
+                .slick-next {
+                    @include utilities.setWH(40px, 40px);
+                    opacity: 0.5;
+                    background: url("/dashboard/section_4/slider_right.svg") center no-repeat;
+                    background-size: 36px;
+                    right: -50px;
+                }
+                .slick-prev {
+                    @include utilities.setWH(40px, 40px);
+                    opacity: 0.5;
+                    background: url("/dashboard/section_4/slider_left.svg") center no-repeat;
+                    background-size: 36px;
+                    left: -50px;
+                }
+                .slick-next::before, .slick-prev::before {
+                    content: "";
+                }
+                .slick-next:hover, .slick-prev:hover {
+                    opacity: 1;
+                }
+                .slick-dots {
+                    text-align: center;
+                    bottom: -50px;
+                    li {
+                        display: inline-block;
+                        padding: 1px;
+                        background: #ccc;
+                        margin: 10px 5px;
+                        width: 40px;
+                        height: 5px;
+                    }
+                    li.slick-active {
+                        background: #036db7;
+                    }
+                    button {
+                        display: none;
+                    }
+                }
+                .news_list {
+                    @include utilities.setFlex(flex, center, space-evenly, column);
+                    @include utilities.setWH(100%, 300px);
+                    span {
+                        background: black;
+                        @include utilities.setWH(100%, auto);
+                        img {
+                            width: 100%;
+                        }
+                        .empty_box {
+                            display: block;
+                            position: relative;
+                            .hover_event {
+                                @include utilities.setAbsolute(50%, 50%, -50%, -50%);
+                                opacity: 0;
+                                transition: 1.5s;
+                                @include utilities.setFlex(flex, center, center, column);
+                                width: 100%;
+                            }
+                            .news_list_img {
+                                transition: 1.5s;
+                                @include utilities.setWH(100%, 200px);
+                                overflow: hidden;
+                                opacity: 0.8;
+                                img {
+                                    @include utilities.setWH(100%, 100%);
+                                    object-fit: cover;
+                                    transform: scale(1.0);
+                                    transition: 1.5s;
+                                }
+                            }
+                        }
+                        &:hover {
+                            .empty_box {
+                                .hover_event {
+                                    opacity: 1;
+                                }
+                                .news_list_img {
+                                    img {
+                                        transform: scale(1.1);
+                                        transition: 1.5s;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .news_contents {
+                        h4 {
+                            font-size: variables.$DEF_FONT_SIZE - 1;
+                            color: #767676;
+                            @include utilities.setMargin(10px, 0, 10px, 0);
+                        }
+                        a {
+                            p {
+                                font-size: variables.$DEF_FONT_SIZE - 1;
+                                color: variables.$DEF_COLOR;
+                                line-height: variables.$DEF_LINE_HEIGHT + 3;
+                                font-weight: variables.$DEF_FONT_WEIGHT + 200;
+                            }
+                            &:hover {
+                                p {
+                                    text-decoration: underline;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .s4_bottom {
+                @include utilities.setMargin(80px, 0, 0, 0);
+                .s4_bottom_top {
+                    @include utilities.setMargin(0, 0, 40px, 0);
+                    h4 {
+                        font-size: variables.$DEF_FONT_SIZE + 25;
+                        color: variables.$DEF_COLOR;
+                    }
+                }
+                .s4_bottom_bottom {
+                    @include utilities.setFlex(flex, center, space-between, row);
+                    .s4_bottom_left {
+                        @include utilities.setWH(49%, 200px);
+                        background-color: variables.$DEF_COLOR;
+                    }
+                    .s4_bottom_right {
+                        @include utilities.setWH(49%, 200px);
+                    }
+                    .top_list {
+                        @include utilities.setFlex(flex, center, space-evenly, row);
+                        @include utilities.setWH(100%, 200px);
+                        span {
+                            background-color: black;
+                            @include utilities.setWH(100%, auto);
+                            .empty_box {
+                                display: block;
+                                position: relative;
+                                .hover_event {
+                                    @include utilities.setAbsolute(50%, 50%, -50%, -50%);
+                                    opacity: 0;
+                                    transition: 1.5s;
+                                    @include utilities.setFlex(flex, center, center, column);
+                                    width: 100%;
+                                }
+                                .top_list_img {
+                                    transition: 1.5s;
+                                    @include utilities.setWH(100%, 200px);
+                                    overflow: hidden;
+                                    opacity: 0.6;
+                                    img {
+                                        @include utilities.setWH(100%, 100%);
+                                        object-fit: cover;
+                                        transform: scale(1.0);
+                                        transition: 1.5s;
+                                    }
+                                }
+                                .empty_box_title {
+                                    @include utilities.setAbsolute(30px, 35px, 0, 0);
+                                    font-size: variables.$DEF_FONT_SIZE + 11;
+                                    font-weight: variables.$DEF_FONT_WEIGHT + 100;
+                                    color: variables.$DEF_COLOR;
+                                }
+                                .empty_box_content {
+                                    @include utilities.setAbsolute(30px, 70px, 0, 0);
+                                    font-size: variables.$DEF_FONT_SIZE + 1;
+                                    font-weight: variables.$DEF_FONT_WEIGHT + 100;
+                                    color: variables.$DEF_COLOR;
+                                    line-height: variables.$DEF_LINE_HEIGHT + 10;
+                                }
+                                .youtube_icon {
+                                    @include utilities.setAbsolute(24px, 120px, 0, 0);
+                                    width: 48px;
+                                }
+                                .homepage_icon {
+                                    @include utilities.setAbsolute(24px, 120px, 0, 0);
+                                    width: 38px;
+                                }
+                            }
+                            &:hover {
+                                .empty_box {
+                                    .hover_event {
+                                        opacity: 1;
+                                    }
+                                    .top_list_img {
+                                        opacity: 0.3;
+                                        img {
+                                            transform: scale(1.1);
+                                            transition: 1.5s;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        img {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     .dashboard_controller {
         @include utilities.setAbsolute(2%, 50%, -2%, -50%);
         @include utilities.setFlex(flex, center, center, column);

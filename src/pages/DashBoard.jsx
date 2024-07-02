@@ -6,6 +6,7 @@ import '@shinyongjun/react-fullpage/css';
 import Header from "../componets/Header.jsx";
 import DashBoardSection2 from "../componets/DashBoardSection2.jsx";
 import DashBoardSection3 from "../componets/DashBoardSection3.jsx";
+import DashBoardSection4 from "../componets/DashBoardSection4.jsx";
 
 export default function App() {
     const [activeIndex, setActiveIndex] = useState(0);
@@ -36,7 +37,7 @@ export default function App() {
                         <DashBoardSection3 />
                     </FullpageSection>
                     <FullpageSection>
-                        <div>Section 4</div>
+                        <DashBoardSection4 />
                     </FullpageSection>
                     <FullpageSection isAutoHeight>
                         <footer>Footer</footer>

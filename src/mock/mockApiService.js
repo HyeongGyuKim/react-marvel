@@ -60,4 +60,19 @@ DC 코믹스와 함께 미국 만화 산업계의 양대산맥을 이루고 있�
         }];
     });
 
+    mock.onGet("/dashboard/section4").reply(() => {
+        return [200, {
+            data: [
+                {img: '/dashboard/section_4/news_movie.png', title: 'MOVIES', desc: `'Black Panther: Wakanda Forever' 레드카펫 프리미어 라이브 스트리밍 보기`},
+                {img: '/dashboard/section_4/news_comics.jpg', title: 'COMICS', desc: `'Avengers Assemble' 예고편, 모든 시간과 공간에서 가장 강력한 영웅들이 모여 존재하는 모든 것의 끝을 마주하다`},
+                {img: '/dashboard/section_4/news_tvshow.jpg', title: 'TV SHOWS', desc: `‘She-Hulk’: 찰리 콕스가 맷 머독과 데어데블의 귀환을 말하다`},
+                {img: '/dashboard/section_4/news_game.jpg', title: 'GAMES', desc: `MARVEL 퍼즐 맞추기 퀘스트: 아케이드 (에드워드 아크라)와 아케이드 (PWN의 왕)`},
+                {img: '/dashboard/section_4/news_digitalseries.jpg', title: 'DIGITAL SERIES', desc: `마블과 부상당한 전사 프로젝트 팀, '마블 메이크 미 어 히어로'`},
+                {img: '/dashboard/section_4/news_culture.jpg', title: 'CULTURE & LIFESTYLE', desc: `NBA와 마블 스튜디오, '블랙 팬서: 와칸다 포에버' 앞두고 공동 프로모션 캠페인 시작`},
+                {img: '/dashboard/section_4/news_podcasts.jpg', title: 'PODCASTS', desc: `황무지로 돌아갈 시간입니다! '마블 웨이스트랜더스: 둠' 출시`},
+                {img: '/dashboard/section_4/news_game2.jpg', title: 'GAMES', desc: `MARVEL SNAP, 모바일과 PC로 전 세계 출시`},
+            ]
+        }];
+    });
+
 export default mock;

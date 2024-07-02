@@ -10,4 +10,9 @@ export default {
     return api.get(`/dashboard/section3`).
     then((response) => response.data);
   },
+
+  getSection4: () => {
+    return api.get(`/dashboard/section4`).
+    then((response) => response.data);
+  },
 };
