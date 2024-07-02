@@ -526,6 +526,119 @@
         }
     }
 
+    #footer {
+        background-color: #333;
+        @include utilities.setWH(100%, auto);
+        .f_cont {
+            @extend %defalut_calc_section;
+            .f_top {
+                @include utilities.setPadding(40px, 0, 0, 0);
+                img {
+                    width: 100px;
+                }
+            }
+            .f_middle {
+                width: 100%;
+                @include utilities.setFlex(flex, flex-start, space-between, row);
+                @include utilities.setPadding(40px, 0, 60px, 0);
+                .f_middle_left {
+                    width: 50%;
+                    display: flex;
+                    .f_middle_left_box1, .f_middle_left_box2 {
+                        width: 50%;
+                        dl {
+                            @include utilities.setFlex(flex, center, flex-start, row);
+                            @include utilities.setMargin(0, 0, 20px, 0);
+                            font-size: variables.$DEF_FONT_SIZE;
+                            font-weight:  variables.$DEF_FONT_WEIGHT - 100;
+                            dt {
+                                width: 70px;
+                                color: variables.$DEF_COLOR;
+                            }
+                            dd {
+                                color: variables.$DEF_COLOR;
+                            }
+                        }
+                    }
+                }
+                .f_middle_right {
+                    width: 25%;
+                    .f_middle_right_box1 {
+                        @include utilities.setMargin(0, 0, 10px, 0);
+                    }
+                    .f_middle_right_box1, .f_middle_right_box2 {
+                        a {
+                            @include utilities.setFlex(flex, center, flex-start, row);
+                            .f_m_text {
+                                @include utilities.setMargin(0, 0, 0, 20px);
+                            }
+                        }
+                        p {
+                            font-size: variables.$DEF_FONT_SIZE;
+                            color: variables.$DEF_COLOR;
+                            font-weight: variables.$DEF_FONT_WEIGHT - 100;
+                            @include utilities.setMargin(0, 0, 5px, 0);
+                        }
+                        span {
+                            font-size: variables.$DEF_FONT_SIZE;
+                            color: #999;
+                            font-weight: variables.$DEF_FONT_WEIGHT - 100;
+                        }
+                    }
+                }
+                .f_sns {
+                    width: 15%;
+                    p {
+                        color: variables.$DEF_COLOR;
+                        font-weight: variables.$DEF_FONT_WEIGHT - 100;
+                    }
+                    .f_social {
+                        @include utilities.setFlex(flex, flex-start, space-between, row);
+                        flex-wrap: wrap;
+                        text-align: left;
+                        li {
+                            margin-top: 20px;
+                            flex: 0 0 25%;
+                            svg {
+                                transition: fill .4s ease;
+                            }
+                            .icon--svg--gray-fill {
+                                fill: #767676;
+                                &:hover {
+                                    fill: variables.$DEF_COLOR;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .f_bottom {
+                @include utilities.setFlex(flex, center, space-between, row);
+                @include utilities.setPadding(50px, 0, 50px, 0);
+                border-top: 1px solid #ccc;
+                p {
+                    font-size: variables.$DEF_FONT_SIZE - 1;
+                    color: variables.$DEF_COLOR;
+                }
+                .f_menu {
+                    @include utilities.setFlex(flex, center, center, row);
+                    li {
+                        &:nth-child(2) {
+                            @include utilities.setMargin(0, 30px, 0, 30px);
+                        }
+                        a {
+                            font-size: variables.$DEF_FONT_SIZE - 1;
+                            color: variables.$DEF_COLOR;
+                            &:hover {
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     .dashboard_controller {
         @include utilities.setAbsolute(2%, 50%, -2%, -50%);
         @include utilities.setFlex(flex, center, center, column);

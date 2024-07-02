@@ -15,4 +15,8 @@ export default {
     return api.get(`/dashboard/section4`).
     then((response) => response.data);
   },
+  getFooter: () => {
+    return api.get(`/dashboard/footer`).
+    then((response) => response.data);
+  },
 };
