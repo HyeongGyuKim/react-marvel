@@ -1,7 +1,7 @@
 import React from "react";
 import Slider from "react-slick";
 import {useQuery} from "@tanstack/react-query";
-import apiService from "../services/apiService.js";
+import apiService from "../../services/apiService.js";
 
 function DashBoardSection2() {
     const {data: responseData} = useQuery({

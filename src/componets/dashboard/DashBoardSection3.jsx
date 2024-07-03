@@ -1,5 +1,5 @@
 import {useQuery} from "@tanstack/react-query";
-import apiService from "../services/apiService.js";
+import apiService from "../../services/apiService.js";
 
 function DashBoardSection3() {
     const {data: responseData} = useQuery({

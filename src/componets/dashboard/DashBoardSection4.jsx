@@ -1,5 +1,5 @@
 import {useQuery} from "@tanstack/react-query";
-import apiService from "../services/apiService.js";
+import apiService from "../../services/apiService.js";
 import Slider from "react-slick";
 
 function DashBoardSection4() {

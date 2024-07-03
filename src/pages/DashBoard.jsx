@@ -4,9 +4,9 @@ import { useState } from 'react';
 import { FullpageContainer, FullpageSection } from '@shinyongjun/react-fullpage';
 import '@shinyongjun/react-fullpage/css';
 import Header from "../componets/Header.jsx";
-import DashBoardSection2 from "../componets/DashBoardSection2.jsx";
-import DashBoardSection3 from "../componets/DashBoardSection3.jsx";
-import DashBoardSection4 from "../componets/DashBoardSection4.jsx";
+import DashBoardSection2 from "../componets/dashboard/DashBoardSection2.jsx";
+import DashBoardSection3 from "../componets/dashboard/DashBoardSection3.jsx";
+import DashBoardSection4 from "../componets/dashboard/DashBoardSection4.jsx";
 import Footer from "../componets/Footer.jsx";
 
 export default function App() {

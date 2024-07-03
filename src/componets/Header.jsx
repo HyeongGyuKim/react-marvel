@@ -46,7 +46,7 @@ function Header() {
                 <div className="h_right">
                     <ul className="h_menu">
                         <li>
-                            <p>로그인</p>
+                            <p>Login</p>
                         </li>
                         <li onClick={handelOnSearch}>
                             <img src="/icon/search.svg" alt="검색" />
