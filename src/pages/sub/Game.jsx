@@ -46,7 +46,7 @@ function Game() {
     return (
         <>
             <Header />
-            <div id="container">
+            <div id="game_container">
                 <section className="section_1">
                     <div className="section_1_bg"></div>
                     <div className="section_1_title">
