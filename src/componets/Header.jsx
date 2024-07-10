@@ -38,7 +38,7 @@ function Header() {
             <div className="h_cont">
                 <div className="h_left">
                     <div className="h_id">
-                        <Link to={"/pages/DashBoard"}>
+                        <Link to={"/"}>
                             <img src="/logo/marvel_logo.png" alt="로고" />
                         </Link>
                     </div>
@@ -101,7 +101,7 @@ function Header() {
                             <a href="sub/news.html">News</a>
                         </li>
                         <li>
-                            <a href="sub/game.html">Marvel Game</a>
+                            <Link to="/pages/sub/game">Marvel Game</Link>
                         </li>
                     </ul>
                     <ul className="nav_leaflet">

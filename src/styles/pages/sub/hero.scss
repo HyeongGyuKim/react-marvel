@@ -1,0 +1,77 @@
+@use "../../base/variables";
+@use "../../helpers/utilities";
+
+.container {
+    height: 100vh;
+    @include utilities.setMargin(70px, 0, 0, 0);
+    .section_2 {
+        height: 800px;
+        position: relative;
+        .s2_cont {
+            @include utilities.setFlex(flex, center, space-between, row);
+            @include utilities.setWH(100%, 800px);
+            @extend %defalut_calc_section;
+            .s2_cont_left {
+                @include utilities.setWH(60%, 550px);
+                overflow: hidden;
+                border-radius: 20px;
+                @include utilities.setMargin(0, 50px, 0, 0);
+                img {
+                    @include utilities.setWH(100%, 100%);
+                    object-fit: cover;
+                }
+            }
+            .s2_cont_right {
+                width: 40%;
+                h4 {
+                    font-size: variables.$DEF_FONT_SIZE + 21;
+                    color: variables.$DEF_COLOR;
+                    @include utilities.setMargin(0, 0, 20px, 0);
+                }
+                p {
+                    font-size: variables.$DEF_FONT_SIZE + 1;
+                    color: #cdcdcd;
+                    line-height: variables.$DEF_LINE_HEIGHT + 7;
+                    white-space: normal;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical;
+                    display: -webkit-box;
+                    transition: all 0.5s ease-in-out;
+                    height: 65px;
+                }
+            }
+        }
+    }
+}
+
+.vertical-section {
+    height: 500px;
+    background-color: #e0e0e0;
+    padding: 20px;
+}
+
+.horizontal-scroll-wrapper {
+    width: 100%;
+    height: 300px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+.horizontal-scroll-content {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.image-container {
+    display: inline-block;
+    width: 300px;
+    height: 280px;
+    margin-right: 20px;
+    background-color: #f0f0f0;
+    text-align: center;
+    line-height: 280px;
+    font-size: 24px;
+}

@@ -1,0 +1,273 @@
+@use "../../base/variables";
+@use "../../helpers/utilities";
+
+#container {
+    @include utilities.setMargin(70px, 0, 70px, 0);
+    position: relative;
+    .section_1 {
+        height: variables.$DEF_HEIGHT + 300;
+        position: relative;
+        .section_1_bg {
+            background: url("/public/sub/game/section_1/game_bg2.jpg") no-repeat center center;
+            background-size: 100%;
+            height: 100%;
+            opacity: 0.7;
+            background-position: right -210px;
+        }
+        .section_1_title {
+            @include utilities.setAbsolute(50%, 50%, -50%, -50%);
+            user-select: none;
+            h3 {
+                font-size: variables.$DEF_FONT_SIZE + 45;
+                color: variables.$DEF_COLOR;
+                @include utilities.setMargin(0, 0, 10px, 0);
+                text-align: center;
+            }
+            p {
+                font-size: variables.$DEF_FONT_SIZE + 9;
+                color: variables.$DEF_COLOR;
+            }
+        }
+        .section_1_content {
+            position: absolute;
+            bottom: -50%;
+            left: 50%;
+            transform: translate(-50%, 15%);
+            .s1_content_wrap {
+                display: flex;
+                .s1_box {
+                    @include utilities.setMargin(0, 10px, 0, 10px);
+                    width: variables.$DEF_WIDTH + 80;
+                    a {
+                        img {
+                            width: 100%;
+                            object-fit: cover;
+                            transition: all 0.3s ease-in-out;
+                            &:hover {
+                                transform: translateY(-15px);
+                                transition: all 0.3s ease-in-out;
+                            }
+                            &:hover + p {
+                                color: #e62429;
+                            }
+                        }
+                        p {
+                            font-size: variables.$DEF_FONT_SIZE;
+                            color: #e1e1e1;
+                            @include utilities.setMargin(10px, 0, 5px, 0);
+                            transition: all 0.3s ease-in-out;
+                            letter-spacing: -0.7px;
+                            line-height: variables.$DEF_LINE_HEIGHT + 5;
+                            &:hover {
+                                color: #e62429;
+                            }
+                        }
+                        span {
+                            font-size: variables.$DEF_FONT_SIZE - 4;
+                            color: #999;
+                            transition: all 0.3s ease-in-out;
+                        }
+                        &:hover {
+                            img {
+                                transform: translateY(-15px);
+                            }
+                            p {
+                                color: #e62429;
+                            }
+                        }
+                    }
+                }
+            }
+            .heartbeat {
+                -webkit-animation: heartbeat 4s ease-in-out infinite both;
+                animation: heartbeat 4s ease-in-out infinite both;
+            }
+        }
+    }
+    .section_2 {
+        @include utilities.setPadding(0, 20px, 0, 20px);
+        @include utilities.setMargin(300px, auto, 0, auto);
+        @extend %defalut_calc_section;
+        .s2_main_title {
+            @include utilities.setMargin(0, 0, 20px, 0);
+            p {
+                font-size: variables.$DEF_FONT_SIZE + 25;
+                color: variables.$DEF_COLOR;
+                font-weight: variables.$DEF_FONT_WEIGHT + 100;
+            }
+        }
+        .s2_wrap {
+            @include utilities.setFlex(flex, center, space-between, row);
+            width: 100%;
+            flex-wrap: wrap;
+            .s2_box {
+                border-radius: variables.$DEF_BORDER_RADIUS + 5;
+                width: 23.5%;
+                @include utilities.setMargin(0, 20px, 40px, 0);
+                overflow: hidden;
+                box-shadow: 10px 10px 10px #3e3e3e;
+                position: relative;
+                &:nth-child(4n) {
+                    margin-right: 0;
+                }
+                .s2_imgBox {
+                    a {
+                        position: relative;
+                        .s2_img {
+                            img {
+                                @include utilities.setWH(100%, 50%);
+                            }
+                            &:hover {
+                                img {
+                                    opacity: 0.5;
+                                }
+                            }
+                        }
+                        .s2_title {
+                            position: absolute;
+                            bottom: 20px;
+                            left: 20px;
+                            z-index: 3;
+                            @include utilities.setPadding(0, 20px, 0, 0);
+                            p {
+                                font-size: variables.$DEF_FONT_SIZE;
+                                color: variables.$DEF_COLOR;
+                                line-height: variables.$DEF_LINE_HEIGHT + 9;
+                            }
+                        }
+                    }
+                }
+                .s2_hoverBox {
+                    display: none;
+                    transition: all 0.5s ease-in-out;
+                    .s2_hoverBg {
+                        background: #525252;
+                        @include utilities.setWH(100%, 60px);
+                        position: absolute;
+                        bottom: 0;
+                        right: 0;
+                    }
+                    .s2_hoverBg2 {
+                        background: #525252;
+                        @include utilities.setWH(100%, 86px);
+                        position: absolute;
+                        bottom: 0;
+                        right: 0;
+                    }
+                    .s2_hoverContent {
+                        @include utilities.setAbsolute(50%, 50%, -50%, -50%);
+                        transition: all 0.5s ease-in-out;
+                        @include utilities.setFlex(flex, center, center, row);
+                        background: #f44336db;
+                        padding: variables.$DEF_PADDING + 5;
+                        border-radius: variables.$DEF_BORDER_RADIUS + 20;
+                        img {
+                            width: variables.$DEF_WIDTH - 80;
+                            border-radius: variables.$DEF_BORDER_RADIUS + 10;
+                            @include utilities.setMargin(0, 5px, 0 ,0);
+                            transition: all 1s;
+                        }
+                        p {
+                            font-size: variables.$DEF_FONT_SIZE;
+                            color: variables.$DEF_COLOR;
+                        }
+                        &:hover {
+                            img {
+                                transform: rotate(180deg); transition: all 1s;
+                            }
+                        }
+                    }
+                }
+                &:hover {
+                    .s2_hoverBox {
+                        display: block;
+                        transition: all 0.5s ease-in-out;
+                    }
+                    .s2_img {
+                        img {
+                            opacity: 0.5;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.img_box {
+    position: fixed;
+    bottom: 6%;
+    right: 2%;
+    img {
+        transform: rotate(-45deg); width: variables.$DEF_WIDTH + 120; opacity: 0.85;
+    }
+}
+
+@-webkit-keyframes heartbeat {
+    from {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-transform-origin: center center;
+        transform-origin: center center;
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+    10% {
+        -webkit-transform: scale(0.91);
+        transform: scale(0.91);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+    17% {
+        -webkit-transform: scale(0.98);
+        transform: scale(0.98);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+    33% {
+        -webkit-transform: scale(0.87);
+        transform: scale(0.87);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+    45% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+}
+@keyframes heartbeat {
+    from {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-transform-origin: center center;
+        transform-origin: center center;
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+    10% {
+        -webkit-transform: scale(0.91);
+        transform: scale(0.91);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+    17% {
+        -webkit-transform: scale(0.98);
+        transform: scale(0.98);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+    33% {
+        -webkit-transform: scale(0.87);
+        transform: scale(0.87);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+    45% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+}

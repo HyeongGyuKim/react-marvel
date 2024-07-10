@@ -15,8 +15,20 @@ export default {
     return api.get(`/dashboard/section4`).
     then((response) => response.data);
   },
+
   getFooter: () => {
     return api.get(`/dashboard/footer`).
     then((response) => response.data);
   },
+
+  getGameSection1: () => {
+    return api.get(`/sub/game/section1`).
+    then((response) => response.data);
+  },
+
+  getGameSection2: () => {
+    return api.get(`/sub/game/section2`).
+    then((response) => response.data);
+  },
+
 };

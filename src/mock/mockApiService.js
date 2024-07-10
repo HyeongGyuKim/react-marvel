@@ -90,4 +90,49 @@ DC 코믹스와 함께 미국 만화 산업계의 양대산맥을 이루고 있�
         }];
     });
 
+    mock.onGet("/sub/game/section1").reply(() => {
+        return [200, {
+            data: [
+                {img: '/sub/game/section_1/game1.jpg', title: `Marvel Rivals`, date: ``, alt: 'game1'},
+                {img: '/sub/game/section_1/game2.jpg', title: `Marvel's Blade`, date: ``, alt: 'game2'},
+                {img: '/sub/game/section_1/game3.jpg', title: `Marvel 1943: Rise of Hydra`, date: `2025`, alt: 'game3'},
+                {img: '/sub/game/section_1/game4.jpg', title: `MARVEL vs. CAPCOM Fighting Collection: Arcade Classics`, date: `2024`, alt: 'game4'},
+                {img: '/sub/game/section_1/game5.jpg', title: `Marvel's Spider-Man 2`, date: `2023`, alt: 'game5'},
+                {img: '/sub/game/section_1/game6.jpg', title: `MARVEL SNAP`, date: `2022`, alt: 'game6'},
+            ]
+        }];
+    });
+
+    mock.onGet("/sub/game/section2").reply(() => {
+        return [200, {
+            data: [
+                {img: '/sub/game/section_2/game1.jpg', title: `Marvel's Wolverine`, alt: 'game1'},
+                {img: '/sub/game/section_2/game2.jpg', title: `Marvel's Blade`, alt: 'game2'},
+                {img: '/sub/game/section_2/game3.jpg', title: `Marvel Rivals`, alt: 'game3'},
+                {img: '/sub/game/section_2/game4.jpg', title: `Marvel 1943: Rise of Hydra`, alt: 'game4'},
+                {img: '/sub/game/section_2/game5.jpg', title: `Marvel's Wolverine`, alt: 'game5'},
+                {img: '/sub/game/section_2/game6.jpg', title: `Marvel's Spider-Man 2`, alt: 'game6'},
+                {img: '/sub/game/section_2/game7.jpg', title: `Marvel's Midnight Suns`, alt: 'game7'},
+                {img: '/sub/game/section_2/game8.jpg', title: `MARVEL SNAP`, alt: 'game8'},
+                {img: '/sub/game/section_2/game9.jpg', title: `Marvel's Guardians of the Galaxy`, alt: 'game9'},
+                {img: '/sub/game/section_2/game10.jpg', title: `MARVEL Future Revolution`, alt: 'game10'},
+                {img: '/sub/game/section_2/game11.jpg', title: `Fortnite`, alt: 'game11'},
+                {img: '/sub/game/section_2/game12.jpg', title: `Marvel's Spider-Man: Miles Morales`, alt: 'game12'},
+                {img: '/sub/game/section_2/game13.jpg', title: `Marvel's Avengers`, alt: 'game13'},
+                {img: '/sub/game/section_2/game14.jpg', title: `Marvel's Iron Man VR`, alt: 'game14'},
+                {img: '/sub/game/section_2/game15.jpg', title: `LEGO Marvel Colletion Bundle`, alt: 'game15'},
+                {img: '/sub/game/section_2/game16.jpg', title: `Marvel Ultimate Alliance 3: The Black Order`, alt: 'game16'},
+                {img: '/sub/game/section_2/game17.jpg', title: `Marvel's Spider-Man`, alt: 'game17'},
+                {img: '/sub/game/section_2/game18.jpg', title: `MARVEL Powers United VR`, alt: 'game18'},
+                {img: '/sub/game/section_2/game19.jpg', title: `Marvel Contest of Champions`, alt: 'game19'},
+                {img: '/sub/game/section_2/game20.jpg', title: `MARVEL Future Fight`, alt: 'game20'},
+                {img: '/sub/game/section_2/game21.jpg', title: `Marvel Strike Force`, alt: 'game21'},
+                {img: '/sub/game/section_2/game22.jpg', title: `MARVEL Puzzle Quest`, alt: 'game22'},
+                {img: '/sub/game/section_2/game23.jpg', title: `Marvel vs. Capcom: Infinite`, alt: 'game23'},
+                {img: '/sub/game/section_2/game24.jpg', title: `Marvel's Guardians of the Galaxy: The Telltale Series`, alt: 'game24'},
+                {img: '/sub/game/section_2/game25.jpg', title: `Marvel Pinball`, alt: 'game25'},
+            ]
+        }];
+    });
+
 export default mock;
