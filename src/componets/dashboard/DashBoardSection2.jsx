@@ -26,7 +26,7 @@ function DashBoardSection2() {
                                 <p className="s2_slide_desc">{info.desc}</p>
                                 <div className="s2_slide_etc">
                                     <div>
-                                        <span>감독</span>
+                                        <span>감독123</span>
                                         <p>{info.director}</p>
                                     </div>
                                     <div>
