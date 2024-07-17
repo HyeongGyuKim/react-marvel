@@ -31,4 +31,14 @@ export default {
     then((response) => response.data);
   },
 
+  getToySideMenu: () => {
+    return api.get(`/sub/toy/sideMenu`).
+    then((response) => response.data);
+  },
+
+  getToyProduct: () => {
+    return api.get(`/sub/toy/product`).
+    then((response) => response.data);
+  },
+
 };

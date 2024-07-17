@@ -135,4 +135,67 @@ DC 코믹스와 함께 미국 만화 산업계의 양대산맥을 이루고 있�
         }];
     });
 
+    mock.onGet("/sub/toy/sideMenu").reply(() => {
+        return [200, {
+            data: [
+                {
+                    menu: 'Category',
+                    child: [
+                        {title: 'Toys'},
+                        {title: 'Toys by Age'},
+                        {title: 'Collectibles'},
+                    ]
+                },
+                {
+                    menu: 'Product Type',
+                    child: [
+                        {title: 'Action Figures'},
+                        {title: 'Arts & Crafts'},
+                        {title: 'Bath Toys'},
+                        {title: 'Books'},
+                        {title: 'Bubble Wand'},
+                        {title: 'Canvas Art'},
+                        {title: 'Cars & Trains'},
+                        {title: 'Collectible Keys'},
+                        {title: 'Collectibles'},
+                        {title: 'Costumes'},
+                        {title: 'Costume Accessories'},
+                    ]
+                },
+                {
+                    menu: 'Gender',
+                    child: [
+                        {title: 'Boys'},
+                        {title: 'Girls'},
+                        {title: 'Men'},
+                        {title: 'Women'},
+                    ]
+                },
+                {
+                    menu: 'Age',
+                    child: [
+                        {title: 'Adults'},
+                        {title: 'Baby'},
+                        {title: 'Kids'},
+                    ]
+                }
+            ]
+        }];
+    });
+
+    mock.onGet("/sub/toy/product").reply(() => {
+        return [200, {
+            data: [
+                {label: 'BLACK FRIDAY BEAL', title: `Buzz Lightyear Interactive Talking Action Figure - Toy Story - 12''`, price: '$32.95', discount: '$28.00', defaultImg: '/sub/toy/section_2/toy1.jfif', changeImg: '/sub/toy/section_2/toy2.jfif', defaultAlt: 'toy1', changeAlt: 'toy2'},
+                {label: 'BLACK FRIDAY BEAL', title: `Chewbacca Talking Action Figure - Star Wars`, price: '$29.99', discount: '$22.00', defaultImg: '/sub/toy/section_2/toy3.jfif', changeImg: '/sub/toy/section_2/toy4.jfif', defaultAlt: 'toy3', changeAlt: 'toy4'},
+                {label: 'BLACK FRIDAY BEAL', title: `Cinderella Classic Doll Deluxe Gift Set`, price: '$79.99', discount: '$69.99', defaultImg: '/sub/toy/section_2/toy5.jfif', changeImg: '/sub/toy/section_2/toy6.jfif', defaultAlt: 'toy5', changeAlt: 'toy6'},
+                {label: 'BLACK FRIDAY BEAL', title: `Disney Classic Doll Collection Gift Set - 11 1/2''`, price: '$129.99', discount: '$119.99', defaultImg: '/sub/toy/section_2/toy7.jfif', changeImg: '/sub/toy/section_2/toy8.jfif', defaultAlt: 'toy7', changeAlt: 'toy8'},
+                {label: 'BLACK FRIDAY BEAL', title: `Arendelle Castel Playset - Frozen 2`, price: '$139.95', discount: '$129.95', defaultImg: '/sub/toy/section_2/toy9.jfif', changeImg: '/sub/toy/section_2/toy10.jfif', defaultAlt: 'toy9', changeAlt: 'toy10'},
+                {label: 'BLACK FRIDAY BEAL', title: `Spider-Man Acetion Figure Set - Marvel Toybox`, price: '49.99', discount: '$39.99', defaultImg: '/sub/toy/section_2/toy11.jfif', changeImg: '/sub/toy/section_2/toy12.jfif', defaultAlt: 'toy11', changeAlt: 'toy12'},
+                {label: 'BLACK FRIDAY BEAL', title: `Mack Carrier Stunt Race Playset - Cars`, price: '$79.99', discount: '$69.99', defaultImg: '/sub/toy/section_2/toy13.jfif', changeImg: '/sub/toy/section_2/toy14.jfif', defaultAlt: 'toy13', changeAlt: 'toy14'},
+                {label: 'BLACK FRIDAY BEAL', title: `Doctor Strange Talking Action Figure`, price: '$29.99', discount: '$22.00', defaultImg: '/sub/toy/section_2/toy15.jfif', changeImg: '/sub/toy/section_2/toy16.jfif', defaultAlt: 'toy15', changeAlt: 'toy16'},
+            ]
+        }];
+    });
+
 export default mock;

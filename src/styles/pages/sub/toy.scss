@@ -1,0 +1,195 @@
+@use "../../base/variables";
+@use "../../helpers/utilities";
+
+#toy_container {
+    margin: variables.$DEF_MARGIN - 10;
+    position: relative;
+    .section_1 {
+        background: url('/public/sub/toy/section_1/bg.jpg') no-repeat center center;
+        height: variables.$DEF_HEIGHT + 400;
+        @include utilities.setMargin(70px, 0, 0, 0);
+        background-position: 0 -200px;
+        position: relative;
+        .blackBg {
+            height: variables.$DEF_HEIGHT + 400;
+            background-color: #000;
+            opacity: 0.3;
+        }
+        .s1_textBox {
+            @include utilities.setAbsolute(50%, 50%, -50%, -50%);
+            user-select: none;
+            h4 {
+                font-size: variables.$DEF_FONT_SIZE + 65;
+                text-align: center;
+                @include utilities.setMargin(0, 0, 10px, 0);
+                color: variables.$DEF_COLOR;
+            }
+            p {
+                font-size: variables.$DEF_FONT_SIZE + 13;
+                color: variables.$DEF_COLOR;
+            }
+        }
+    }
+    .section_2 {
+        @include utilities.setFlex(flex, flex-start, space-between, row);
+        @include utilities.setMargin(100px, 0, 100px, 0);
+        @include utilities.setWH(100%, auto);
+        @include utilities.setPadding(0, 100px, 0, 100px);
+        box-sizing: border-box;
+        .s2_left {
+            @include utilities.setWH(20%, 250px);
+            color: variables.$DEF_COLOR;
+            padding: variables.$DEF_PADDING + 10;
+            box-sizing: border-box;
+            position: sticky;
+            top: 100px;
+            .menu_name {
+                border-bottom: 1px solid #929292;
+                @include utilities.setPadding(0, 0, 15px, 0);
+                @include utilities.setMargin(15px, 0, 0, 0);
+                &:first-child {
+                    @include utilities.setMargin(0, 0, 0, 0);
+                }
+                .menu_box {
+                    @include utilities.setFlex(flex, center, space-between, row);
+                    cursor: pointer;
+                    p {
+                        font-size: variables.$DEF_FONT_SIZE + 3;
+                    }
+                    i {
+                        font-size: variables.$DEF_FONT_SIZE - 1;
+                        &:last-child {
+                            display: none;
+                        }
+                    }
+                }
+                .menu_slider {
+                    max-height: 0;
+                    overflow: hidden;
+                    transition: max-height 0.3s ease-out;
+                    @include utilities.setPadding(0, 0, 0, 0);
+
+                    &.active {
+                        @include utilities.setPadding(20px, 0, 15px, 0);
+                    }
+                    a {
+                        font-size: variables.$DEF_FONT_SIZE - 1;
+                        @include utilities.setMargin(10px, 20px, 0, 0);
+                        border: 1px solid #fff;
+                        border-radius: variables.$DEF_BORDER_RADIUS + 15;
+                        @include utilities.setPadding(5px, 10px, 5px, 10px);
+                        display: inline-block;
+                        &:hover {
+                            border: 1px solid #79a2e9;
+                            color: #79a2e9;
+                        }
+                        &:last-child {
+                            @include utilities.setMargin(10px, 0, 0, 0);
+                        }
+                        span {
+                            i {
+                                @include utilities.setMargin(0, 0, 0, 10px);
+                                font-size: variables.$DEF_FONT_SIZE - 1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .s2_right {
+            width: 80%;
+            position: relative;
+            overflow: hidden;
+            .allSelect {
+                @include utilities.setFlex(flex, center, flex-end, row);
+                height: variables.$DEF_HEIGHT - 47;
+                label {
+                    font-size: variables.$DEF_FONT_SIZE - 1;
+                    @include utilities.setMargin(0, 0, 0, 5px);
+                    cursor: pointer;
+                }
+                input {
+                    margin: variables.$DEF_MARGIN - 10;
+                }
+            }
+            .s2_right_wrap {
+                width: 100%;
+                @include utilities.setFlex(flex, flex-start, space-between, row);
+                flex-wrap: wrap;
+                .s2_right_box {
+                    @include utilities.setWH(24%, auto);
+                    box-sizing: border-box;
+                    position: relative;
+                    @include utilities.setMargin(15px, 0, 0, 0);
+                    .s2_etc {
+                        @include utilities.setMargin(0, 0, 5px, 0);
+                        input {
+                            margin: variables.$DEF_MARGIN - 10;
+                        }
+                    }
+                    .s2_imgBox {
+                        @include utilities.setWH(100%, auto);
+                        position: relative;
+                        img {
+                            width: 100%;
+                            object-fit: cover;
+                        }
+                        .img2 {
+                            @include utilities.setAbsolute(0, 0, 0, 0);
+                            opacity: 0;
+                            transition: all 0.5s ease-in-out;
+                        }
+                        &:hover {
+                            .img2 {
+                                opacity: 1;
+                            }
+                        }
+                    }
+                    .s2_textBox {
+                        padding: variables.$DEF_PADDING + 10;
+                        .s2_friday {
+                            font-size: variables.$DEF_FONT_SIZE - 1;
+                            color: #a3a3a3;
+                            i {
+                                @include utilities.setMargin(0, 5px, 0, 0);
+                            }
+                        }
+                        .s2_title {
+                            font-size: variables.$DEF_FONT_SIZE;
+                            @include utilities.setMargin(5px, 0, 10px, 0);
+                            line-height: variables.$DEF_LINE_HEIGHT + 3;
+                        }
+                        .s2_price {
+                            @include utilities.setFlex(flex, flex-start, flex-end, row);
+                            font-size: variables.$DEF_FONT_SIZE - 1;
+                            .price {
+                                text-decoration: line-through;
+                                color: #929292;
+                                @include utilities.setMargin(0, 10px, 0, 0);
+                            }
+                            .discount {
+                                color: #f44336;
+                            }
+                        }
+                    }
+                    .wish {
+                        background: url('/public/sub/toy/section_2/re_wish_icon.svg') no-repeat;
+                        @include utilities.setWH(25px, 25px);
+                        position: absolute;
+                        top: 40px;
+                        right: 15px;
+                        background-size: 25px;
+                        cursor: pointer;
+                    }
+                    .wish.on {
+                        background: url('/public/sub/toy/section_2/re_wish_icon_on.svg') no-repeat;
+                        @include utilities.setWH(25px, 25px);
+                        top: 23px;
+                        right: 5px;
+                        background-size: 24px;
+                    }
+                }
+            }
+        }
+    }
+}

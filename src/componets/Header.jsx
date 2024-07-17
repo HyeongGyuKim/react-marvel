@@ -117,7 +117,7 @@ function Header() {
                             <h3>Shop</h3>
                         </li>
                         <li>
-                            <a href="sub/toy.html">Toy & Collectibles</a>
+                            <Link to="/pages/sub/toy">Toy & Collectibles</Link>
                         </li>
                     </ul>
                 </nav>
